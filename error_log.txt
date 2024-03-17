@@ -1,0 +1,192 @@
+Input File: inputs/bench_1024.smt2.1.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 2358 3988
+
+--- End of Error ---
+
+Input File: inputs/bench_1024.smt2.2.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 2358 3988
+
+--- End of Error ---
+
+Input File: inputs/bench_10502.smt2.2.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 5419 9385
+
+--- End of Error ---
+
+Input File: inputs/bench_10566.smt2.1.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 3127 5489
+
+--- End of Error ---
+
+Input File: inputs/bench_10535.smt2.1.cnf
+Error: Error executing command. Exit code: 32512
+
+--- End of Error ---
+
+Input File: inputs/bench_10535.smt2.2.cnf
+Error: Error executing command. Exit code: 32512
+
+--- End of Error ---
+
+Input File: inputs/bench_11676.smt2.1.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 184 230
+
+--- End of Error ---
+
+Input File: inputs/bench_11676.smt2.2.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 184 230
+
+--- End of Error ---
+
+Input File: inputs/bench_11877.smt2.1.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 5088 8018
+
+--- End of Error ---
+
+Input File: inputs/bench_11877.smt2.2.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 5088 8018
+
+--- End of Error ---
+
+Input File: inputs/formula.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 3 2
+
+--- End of Error ---
+
+Input File: inputs/bench_1024.smt2.1.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 2358 3988
+
+--- End of Error ---
+
+Input File: inputs/bench_1024.smt2.2.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 2358 3988
+
+--- End of Error ---
+
+Input File: inputs/bench_10502.smt2.2.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 5419 9385
+
+--- End of Error ---
+
+Input File: inputs/bench_10566.smt2.1.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 3127 5489
+
+--- End of Error ---
+
+Input File: inputs/bench_10535.smt2.1.cnf
+Error: Error executing command. Exit code: 32512
+
+--- End of Error ---
+
+Input File: inputs/bench_10535.smt2.2.cnf
+Error: Error executing command. Exit code: 32512
+
+--- End of Error ---
+
+Input File: inputs/bench_11676.smt2.1.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 184 230
+
+--- End of Error ---
+
+Input File: inputs/bench_11676.smt2.2.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 184 230
+
+--- End of Error ---
+
+Input File: inputs/bench_11877.smt2.1.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 5088 8018
+
+--- End of Error ---
+
+Input File: inputs/bench_11877.smt2.2.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 5088 8018
+
+--- End of Error ---
+
+Input File: inputs/formula.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 3 2
+
+--- End of Error ---
+
+Input File: inputs/bench_1024.smt2.1.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 2358 3988
+
+--- End of Error ---
+
+Input File: inputs/bench_1024.smt2.2.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 2358 3988
+
+--- End of Error ---
+
+Input File: inputs/bench_10502.smt2.2.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 5419 9385
+
+--- End of Error ---
+
+Input File: inputs/bench_10566.smt2.1.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 3127 5489
+
+--- End of Error ---
+
+Input File: inputs/bench_10535.smt2.1.cnf
+Error: Error executing command. Exit code: 32512
+
+--- End of Error ---
+
+Input File: inputs/bench_10535.smt2.2.cnf
+Error: Error executing command. Exit code: 32512
+
+--- End of Error ---
+
+Input File: inputs/bench_11676.smt2.1.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 184 230
+
+--- End of Error ---
+
+Input File: inputs/bench_11676.smt2.2.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 184 230
+
+--- End of Error ---
+
+Input File: inputs/bench_11877.smt2.1.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 5088 8018
+
+--- End of Error ---
+
+Input File: inputs/bench_11877.smt2.2.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 5088 8018
+
+--- End of Error ---
+
+Input File: inputs/formula.cnf
+Error: Error executing command. Exit code: 32512
+Specific Line: p cnf 3 2
+
+--- End of Error ---
+
