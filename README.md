@@ -1,27 +1,52 @@
-This is a DIMACS fuzzer, a format describing a boolean formula in conjunctive normal form (CNF).
-Some information about this format can be found at the following links:
+# DIMACS Fuzzer Documentation
 
-- <https://fairmut3x.wordpress.com/2011/07/29/cnf-conjunctive-normal-form-dimacs-format-explained/>
-- <http://www.domagoj-babic.com/uploads/ResearchProjects/Spear/dimacs-cnf.pdf>
+This tool is a fuzzer designed to test SAT solvers by generating inputs in the DIMACS format, a common way to describe boolean formulas in Conjunctive Normal Form (CNF). The goal of the fuzzer is to discover bugs in SAT solvers, particularly those built in C.
 
-The aim of the fuzzer is to find bugs in SAT solvers that were built in C
+### Resources on the DIMACS Format:
+- CNF in DIMACS format explained: https://fairmut3x.wordpress.com/2011/07/29/cnf-conjunctive-normal-form-dimacs-format-explained/
+- DIMACS CNF Format Specification (PDF): http://www.domagoj-babic.com/uploads/ResearchProjects/Spear/dimacs-cnf.pdf
 
-The interface of the resulting fuzzer is `fuzz-sat /path/to/SUT /path/to/inputs seed` where:
+## Fuzzer Interface
 
-- `/path/to/SUT` refers to the source directory of the SUT containing the built solver (with gcov coverage information, ASan, and UBSan enabled). The `runsat.sh` script expects a single command line argument, the path to a file containing the input formula, and prints out whether the formula was satisfiable, optionally a model, and the error reports of ASan and UBSan if any issues were detected.
-- `/path/to/inputs` refers to a directory containing a non-empty set of well-formed DIMACS files.
-- `seed` is an integer that you should use to initialize a random number generator if you need one.
+The fuzzer is invoked using the following command:
 
-## The build script
-The `build.sh` script is used to build 
+`fuzz-sat /path/to/SUT /path/to/inputs seed`
 
-## The fuzzer output
+- `/path/to/SUT`: Path to the directory containing the System Under Test (SUT), which should be a SAT solver built with gcov coverage, AddressSanitizer (ASan), and UndefinedBehaviorSanitizer (UBSan) enabled.
+  
+- `/path/to/inputs`: Directory containing a non-empty set of well-formed DIMACS files used as input samples for fuzzing.
 
-Your fuzzer creates a directory `fuzzed-tests` in the **current working directory** that contains at **most 20** test cases that are known to trigger an undefined behavior in the SUT.
+- `seed`: An integer used to initialize the random number generator, if required by the fuzzer.
 
-The fuzzer runs in the following steps:
+## Execution Details
 
-1. Generate an input.
-2. Run the SUT (using the provided `runsat.sh` script) on the input, killing the SUT after a timeout of your choice.
-3. If an undefined behavior was triggered, consider saving the test case in `fuzzed-tests`
-4. Go back to step 1.
+The fuzzer operates using the following scripts:
+
+### `runsat.sh`
+This script executes the SUT with a given input formula. It expects a single argument: the path to a DIMACS file containing the boolean formula. The script will:
+- Determine whether the formula is satisfiable.
+- Optionally print a model if one exists.
+- Report errors if AddressSanitizer (ASan) or UndefinedBehaviorSanitizer (UBSan) detect any issues.
+
+### `build.sh`
+This script builds the SUT, ensuring that it includes coverage instrumentation (gcov), ASan, and UBSan.
+
+## Fuzzer Output
+
+The fuzzer generates a directory named `fuzzed-tests` in the current working directory. This folder will contain up to 20 test cases, each of which triggers undefined behavior in the SUT.
+
+## Fuzzer Workflow
+
+The fuzzer follows these steps:
+
+1. **Generate Input**: A DIMACS file is generated as input for the SUT.
+   
+2. **Run SUT**: The fuzzer runs the SUT using the `runsat.sh` script, passing the generated input as an argument. The SUT is terminated after a configurable timeout if it doesn't complete execution.
+
+3. **Check for Undefined Behavior**: If the SUT encounters undefined behavior (e.g., detected by ASan or UBSan), the corresponding test case is saved in the `fuzzed-tests` directory.
+
+4. **Repeat**: The process is repeated, generating and testing new inputs until a predefined number of test cases or timeout is reached.
+
+---
+
+By following this process, the fuzzer continuously probes the SUT with random inputs, aiming to uncover bugs, memory errors, or other types of vulnerabilities. The generated test cases can be analyzed to understand the specific conditions under which the SUT fails.
