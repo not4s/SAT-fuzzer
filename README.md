@@ -28,8 +28,54 @@ This script executes the SUT with a given input formula. It expects a single arg
 - Optionally print a model if one exists.
 - Report errors if AddressSanitizer (ASan) or UndefinedBehaviorSanitizer (UBSan) detect any issues.
 
-### `build.sh`
-This script builds the SUT, ensuring that it includes coverage instrumentation (gcov), ASan, and UBSan.
+## Building the Fuzzer with CMake
+### Build Instructions:
+1. **Install CMake**:  
+If you don't have CMake installed, follow [this guide](https://cmake.org/install/) to install it.
+2. **Configure and Build**:
+To build the project, run the following commands from the project root:
+  ```bash
+  mkdir build
+  cd build
+  cmake ..
+  make
+  ```
+This will generate the `fuzz-sat` binary in the `bin/` directory under `build/`.
+
+3. **Running the Fuzzer**:
+After building, run the fuzzer with the following command:
+  ```bash
+  ./bin/fuzz-sat /path/to/SUT /path/to/inputs seed
+  ```
+Ensure that the SUT and input files are properly set up before running the fuzzer.
+
+## Running Unit Tests
+The includes **Google Test** for unit testing. The tests cover key components such as formula transformations, utility functions, and fuzzing logic. You can run the tests as follows:
+
+1. **Build Tests**:
+CMake also handles building the tests. Simply run:
+
+  ```bash
+  mkdir build
+  cd build
+  cmake ..
+  make
+  ```
+This will compile the test suite along with the main project.
+
+2. **Run Tests**:
+After the build completes, you can run the tests:
+
+  ```bash
+  ./bin/runTests
+  ```
+Alternatively, you can use CMake’s built-in testing functionality with `ctest`:
+
+  ```bash
+  ctest
+  ```
+This will run all the unit tests and provide a summary of the results.
+
 
 ## Fuzzer Output
 
